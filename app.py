@@ -648,6 +648,71 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# ------------------------------------------------------------------------------
+# 6.1 ACCESS PASSWORD GATE
+# ------------------------------------------------------------------------------
+# يحمي هذا القسم التطبيق بالكامل بكلمة مرور واحدة قبل عرض أي محتوى (الداشبورد
+# أو الإعدادات). كلمة المرور تُقرأ من Streamlit Secrets فقط (لا تُكتب أبداً في
+# الكود المصدري) - يجب ضبطها على Streamlit Community Cloud عبر:
+#   Settings -> Secrets:
+#       [auth]
+#       password = "اكتبي_كلمة_مرور_قوية_هنا"
+#
+# إذا لم يتم ضبط [auth].password في Secrets، يبقى التطبيق مفتوحاً لأي شخص
+# لديه الرابط (لتجنّب قفل التطبيق بالخطأ أثناء التطوير) مع تنبيه واضح لذلك.
+def _get_app_password():
+    try:
+        return st.secrets["auth"]["password"]
+    except Exception:
+        return None
+
+
+def check_password():
+    correct_password = _get_app_password()
+
+    # لا توجد كلمة مرور مضبوطة بعد -> اسمحي بالدخول مع تنبيه للمسؤول فقط
+    if not correct_password:
+        st.warning(
+            "⚠️ No access password is configured (st.secrets['auth']['password']). "
+            "This app is currently open to anyone with the link. "
+            "Add a password in Secrets to restrict access."
+        )
+        return True
+
+    if st.session_state.get("authenticated", False):
+        return True
+
+    st.markdown(
+        """
+        <div style="max-width:480px;margin:70px auto 18px;padding:26px 30px;border-radius:12px;
+                    background:#f4f7fb;border:1px solid #d7e0ea;">
+          <h3 style="color:#00457c;margin-top:0;">🔒 GJU Faculty Self-Evaluation Dashboard</h3>
+          <p style="color:#33414f;font-size:14px;line-height:1.6;">
+            This dashboard is restricted to authorized personnel.<br>
+            For access, please contact <b>Eng. Waed Alswaeer</b> at
+            <a href="mailto:waed.alswaer@gju.edu.jo">waed.alswaer@gju.edu.jo</a>.
+          </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    col1, col2, col3 = st.columns([1, 1.4, 1])
+    with col2:
+        pwd = st.text_input("Password", type="password", key="_access_pwd_input")
+        entered = st.button("Enter", use_container_width=True)
+        if entered:
+            if pwd == correct_password:
+                st.session_state.authenticated = True
+                st.rerun()
+            else:
+                st.error("Incorrect password. Please try again or contact waed.alswaer@gju.edu.jo.")
+    return False
+
+
+if not check_password():
+    st.stop()
+
 # ---- Session state initialization -------------------------------------------------
 if "settings" not in st.session_state:
     st.session_state.settings = active_defaults()
