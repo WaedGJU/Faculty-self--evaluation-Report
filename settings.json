@@ -1,0 +1,14 @@
+{
+  "weights": {"teaching": 0.30, "research": 0.40, "innovation": 0.10, "service": 0.20},
+  "thresholds": {"high": 80, "low": 30},
+  "bonus": [
+    {"position": "dean", "bonus": 5},
+    {"position": "vice dean", "bonus": 3},
+    {"position": "assistant dean", "bonus": 2},
+    {"position": "director", "bonus": 3},
+    {"position": "assistant director", "bonus": 2},
+    {"position": "head of department", "bonus": 4},
+    {"position": "exchange coordinator", "bonus": 2},
+    {"position": "assistant to the president", "bonus": 5}
+  ]
+}
