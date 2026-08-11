@@ -1,4 +1,4 @@
-Dimension,Question no,Question text,Answer_Type,Rule_Code,Expected_Response_and_Score,Importance
+﻿Dimension,Question no,Question text,Answer_Type,Rule_Code,Expected_Response_and_Score,Importance
 Service,7, Are you currently holding an administrative position in GJU,Y/N,YESNO,Yes: 100 | No: 0,6
 Teaching,9, Please enter the number of different courses taught on the first semester of the academic year,Num,NUM_NORM_COURSES,Benchmark: 4,5
 Teaching,10, Please enter the total number of students taught on the first semester of the academic year,Num,NUM_NORM_STUDENTS,Benchmark: 120,6
@@ -14,12 +14,12 @@ Teaching,23, Course portfolio: Did you update and complete the course portfolio 
 Teaching,24, Course portfolio: Are the course schedules an MyGJU complete for all courses taught by you on the second semester?,MCQ,MCQ_3LEVEL,Yes fully complete: 100 | Only partially: 70 | No: 0,4
 Teaching,25, Student Evaluation of Teaching: Did you discuss the Student Evaluation of Teaching (SET) with your students on the second semester?,MCQ,MCQ_3LEVEL,Yes and submitted: 100 | Only partially: 70 | No: 0,4
 Service,26," Student advising: During the second semester, have you contacted the students, to whom you have been assigned as advisor on MyGJU?",Y/N,YESNO,Yes documented: 100 | No: 0,4
-Innovation,27," In the past academic year, have you included or introdcued concepts related to innovation and entrepreneurship into your courses?",Y/N,YESNO,Yes: 100 | No: 0,4
+Innovation and links with the industry,27," In the past academic year, have you included or introdcued concepts related to innovation and entrepreneurship into your courses?",Y/N,YESNO,Yes: 100 | No: 0,4
 Teaching,30, Do you adopt computer software into your teaching?,Y/N,YESNO,Yes: 100 | No: 0,5
 Teaching,33, Do you adopt tools based on artificial intelligence (Al) in teaching?,Y/N,YESNO,Yes: 100 | No: 0,5
 Research,36," Did you supervise any graduation/senior projects or graduate studies (master's theses, doctoral dissertations) throughout the past academic year? ",Y/N,YESNO,Yes: 100 | No: 0,5
 Research,37, How many students did you supervise throughout the past academic year,Num,NUM_NORM_SUPERVISION,Direct Number Input,5
-Innovation,38, At least one of the project/theses I supervised has been disseminated through,MCQ,MCQ_CUSTOM,Classification based on output type,6
+Innovation and links with the industry,38, At least one of the project/theses I supervised has been disseminated through,MCQ,MCQ_CUSTOM,Classification based on output type,6
 Teaching,40, Did you during this academic year design and produce an online course relying on asynchronous learning?,Y/N,YESNO,Yes approved: 100 | No: 0,6
 Teaching,42, Did you during this academic year develop and implement a course linked to an international professional certificate?,Y/N,YESNO,Yes approved: 100 | No: 0,7
 Teaching,44," Did you during this academic year complete a training program in the field of learning, teaching, and academic development that was approved or offered by the e-Learning and Academic Improvement Center (CeLAPI) at the University?",Y/N,YESNO,Yes: 100 | No: 0,6
@@ -35,15 +35,15 @@ Research,60," If yes, how many papers have you published in the past academic ye
 Research,61, How many of these published works are published in periodicals indexed in Scopus?,Num,NUM_NORM_SCOPUS,Benchmark: 2,6
 Research,63, Have you authored/translated (or co-authored/co-translated) a book in the past academic year?,Y/N,YESNO,Yes: 100 | No: 0,5
 Research,65, Have you authored (or co-authored) a book chapter in the past academic year?,Y/N,YESNO,Yes: 100 | No: 0,5
-Innovation,67, Have you registered a patent in the past academic year?,Y/N,YESNO,Yes: 100 | No: 0,8
-Innovation,69, Have you participated in a visual or design art exhibition presenting your own original work,Y/N,YESNO,Yes: 100 | No: 0,5
+Innovation and links with the industry,67, Have you registered a patent in the past academic year?,Y/N,YESNO,Yes: 100 | No: 0,8
+Innovation and links with the industry,69, Have you participated in a visual or design art exhibition presenting your own original work,Y/N,YESNO,Yes: 100 | No: 0,5
 Service,72, Community service at GJU: Were you in this academic year involved in any non-academic community service at GJU?,Y/N,YESNO,Yes: 100 | No: 0,6
 Service,75, Community service in Jordan: Were you in this academic year involved in any community service in Jordan?,Y/N,YESNO,Yes: 100 | No: 0,5
 Service,78, Service for the international community: Were you in this academic year involved in any community service in Jordan?,Y/N,YESNO,Yes: 100 | No: 0,4
 Service,81, Did you hold an administrative position at GJU during the past academic year? ,Y/N,YESNO,Yes: 100 | No: 0,6
 Service,84, Would you like to document any further community service activities not captured in the previous questions?,Y/N,YESNO,Yes: 100 | No: 0,4
 Service,87," Were you in this academic year granted any honors, awards, fellowships, and/or scholarships? ",Y/N,YESNO,Yes: 100 | No: 0,6
-Innovation,90," Have you enabled/facilitated GJU to obtain financial grants for facilities and infrastructure development, sponsorship, and/or student activities?",Y/N,YESNO,Yes: 100 | No: 0,6
+Innovation and links with the industry,90," Have you enabled/facilitated GJU to obtain financial grants for facilities and infrastructure development, sponsorship, and/or student activities?",Y/N,YESNO,Yes: 100 | No: 0,6
 Service,8,Please select the administrative position,Text,KEEP_TEXT,Keep Original Text,0
 General,3,School,Text,KEEP_TEXT,Keep Original Text,0
 General,4,Department,Text,KEEP_TEXT,Keep Original Text,0

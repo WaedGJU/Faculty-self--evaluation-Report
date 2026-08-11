@@ -71,7 +71,11 @@ def dim_label(key):
     return DIMENSION_LABELS.get(str(key or "").strip().lower(), key)
 
 
-DIMENSION_OPTIONS = ["Teaching", "Research", "Innovation", "Service", "General"]
+# قيمة "Innovation" أصبحت الآن بصيغتها الكاملة "Innovation and links with the
+# industry" - وهي القيمة الفعلية التي تُخزَّن في ملف rules.csv وتظهر في القائمة
+# المنسدلة، وليست مجرد تسمية عرض (dim_label لا يزال يُستخدَم بصيغة Title Case
+# منسّقة في التقارير وعناوين الأعمدة عبر canonicalize_dimension).
+DIMENSION_OPTIONS = ["Teaching", "Research", "Innovation and links with the industry", "Service", "General"]
 DIMENSION_OPTION_LABELS = [dim_label(d) for d in DIMENSION_OPTIONS]
 
 RULE_CODES = [
